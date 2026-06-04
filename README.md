@@ -27,10 +27,9 @@ Each project gets its own copy of the rule file and its own `PROJECT_CONTEXT.md`
 
 Copy the contents of `RULE_memory-manager.md` into your agent IDE's instruction file:
 
-- Antigravity: `.antigravity/rules.md` (or wherever Antigravity reads project-level rules)
-- Claude Code: `CLAUDE.md` at the project root
-- Cursor: `.cursorrules` at the project root, or Settings > Rules for AI for global
-- Other agent IDEs: your system prompt file, workspace instructions, or equivalent
+- Antigravity: `GEMINI.md` or copy .agents file to directory
+- Claude Code: `CLAUDE.md`
+- Other agent IDEs: Look into individual website on how to setup rules, but likely your system prompt file, workspace instructions, or equivalent
 
 Check `SETUP.txt` for a deeper guide.
 

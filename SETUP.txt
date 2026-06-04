@@ -14,9 +14,13 @@ Two files. One you place once. One the AI creates itself.
 Paste the contents of RULE_memory-manager.md into the file below
 for your IDE. If the file doesn't exist yet, create it.
 
+  Tested:
   Claude Code        CLAUDE.md
+  Antigravity        copy the .agents/rules/prod-doc-rule.md to project directory
+                        (or Settings Antigravity IDE -> Customization on agent panel -> add rule)
+
+  Untested but should be very similar, read web docs on rule setup and adjust accordingly:
   Cursor             .cursorrules
-  Antigravity        .antigravity/rules.md
   Gemini CLI         .gemini/GEMINI.md
   Codex CLI          AGENTS.md
   VS Code Copilot    .github/copilot-instructions.md
@@ -50,6 +54,8 @@ Use this if you want the rule active across all projects without
 copying it per project. Each project still gets its own
 PROJECT_CONTEXT.md at its root.
 
+  Antigravity        ~/.gemini/GEMINI.md (or Settings Antigravity IDE -> 
+                        Customization on agent panel -> add rule)
   Claude Code        ~/.claude/CLAUDE.md
   Cursor             Settings → Rules for AI → paste rule there
 
