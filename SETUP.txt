@@ -1,0 +1,122 @@
+PROJECT-CONTEXT — SETUP
+════════════════════════════════════════════════════════════════
+
+Two files. One you place once. One the AI creates itself.
+
+  RULE_memory-manager.md   copy and paste its contents into your IDE's instruction file
+  PROJECT_CONTEXT.md       the AI creates and updates this automatically
+
+
+════════════════════════════════════════════════════════════════
+ LOCAL SETUP  (per project)
+════════════════════════════════════════════════════════════════
+
+Paste the contents of RULE_memory-manager.md into the file below
+for your IDE. If the file doesn't exist yet, create it.
+
+  Claude Code        CLAUDE.md
+  Cursor             .cursorrules
+  Antigravity        .antigravity/rules.md
+  Gemini CLI         .gemini/GEMINI.md
+  Codex CLI          AGENTS.md
+  VS Code Copilot    .github/copilot-instructions.md
+  Windsurf           .windsurfrules
+  Kiro               .kiro/steering/project-context.md
+  OpenCode           AGENTS.md
+
+All paths are relative to your project root.
+
+SEEING THESE FILES
+  Most are dotfiles (names starting with a dot) and hidden by default.
+  macOS Finder: Cmd + Shift + .  to toggle hidden files visible.
+  VS Code and most terminals show them without any extra steps.
+
+WILL PROJECT_CONTEXT.MD APPEAR AUTOMATICALLY?
+  Yes. On your first message the AI detects the file doesn't exist,
+  creates it using the built-in template, and asks you one question
+  to seed it. You don't create this file yourself.
+  After that it updates on every request without you doing anything.
+
+IF YOU ALREADY HAVE AN INSTRUCTION FILE
+  If CLAUDE.md or .cursorrules already has content, just append the
+  rule to the bottom. It won't conflict with existing instructions.
+
+
+════════════════════════════════════════════════════════════════
+ GLOBAL SETUP  (applies to every project you open)
+════════════════════════════════════════════════════════════════
+
+Use this if you want the rule active across all projects without
+copying it per project. Each project still gets its own
+PROJECT_CONTEXT.md at its root.
+
+  Claude Code        ~/.claude/CLAUDE.md
+  Cursor             Settings → Rules for AI → paste rule there
+
+For other IDEs, check if they have a user-level or global config.
+Most currently only support project-level instruction files.
+
+NOTE ON RULES SECTIONS IN IDEs
+  Some IDEs (Cursor, Kiro) have a dedicated Rules or Steering
+  section in their settings UI. You can paste the rule content
+  there instead of using a file — either works. File-based is
+  easier to version control and share with a team.
+
+
+════════════════════════════════════════════════════════════════
+ ADDING TO AN EXISTING PROJECT
+════════════════════════════════════════════════════════════════
+
+Place the rule file, then send this once to bootstrap the doc:
+
+  "Read the codebase and create PROJECT_CONTEXT.md.
+   Fill in what you can infer from the existing code."
+
+The AI will scan your files and build the initial document.
+
+
+════════════════════════════════════════════════════════════════
+ COMMON QUESTIONS
+════════════════════════════════════════════════════════════════
+
+SHOULD I COMMIT PROJECT_CONTEXT.MD TO GIT?
+  Yes. It's project documentation. Commit it like you would
+  any other doc. It's also how teammates and future AI sessions
+  get context instantly.
+
+DOES IT WORK WITH A TEAM?
+  Yes, but treat merge conflicts in PROJECT_CONTEXT.md like you
+  would any shared doc — review and reconcile manually. The AI
+  only writes what it knows from its session, so two people
+  working in parallel may produce conflicting updates.
+
+WILL IT SLOW DOWN RESPONSES?
+  Slightly. The AI reads PROJECT_CONTEXT.md before every task.
+  At the default size limit (~600 lines) that's a small but
+  real addition to each request. Noticeable on very fast models,
+  negligible in most normal workflows.
+
+DOES IT COST MORE?
+  Yes, a small amount. The document adds roughly 10,000–15,000
+  tokens per request at full size. On most frontier models that's
+  around 1–3 cents per request. Stays low as long as you run the
+  occasional consolidation pass to keep the file lean.
+
+WHAT IF THE AI STOPS UPDATING THE FILE?
+  It happens occasionally — models don't follow instructions
+  perfectly 100% of the time. If you notice the file hasn't been
+  updated after a few sessions, just say:
+  "Update PROJECT_CONTEXT.md based on what we just did."
+  For ongoing drift, run a consolidation pass every few weeks:
+  "Read PROJECT_CONTEXT.md and compress it — merge duplicates,
+   summarize old entries, remove anything outdated."
+
+CAN I EDIT PROJECT_CONTEXT.MD MANUALLY?
+  Yes. It's a plain markdown file. Edit it whenever something
+  is wrong, missing, or needs rewording. The AI will pick up
+  your changes on the next request.
+
+WHAT IF MY IDE ISN'T LISTED?
+  Look for: system prompt file, project instructions, workspace
+  rules, or agent config in your IDE's settings. Paste the rule
+  content there. The mechanism differs; the content is the same.
