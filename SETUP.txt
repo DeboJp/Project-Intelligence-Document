@@ -15,11 +15,11 @@ Paste the contents of RULE_memory-manager.md into the file below
 for your IDE. If the file doesn't exist yet, create it.
 
   Tested:
-  Claude Code        CLAUDE.md
   Antigravity        copy the .agents/rules/prod-doc-rule.md to project directory
                         (or Settings Antigravity IDE -> Customization on agent panel -> add rule)
 
   Untested but should be very similar, read web docs on rule setup and adjust accordingly:
+  Claude Code        CLAUDE.md
   Cursor             .cursorrules
   Gemini CLI         .gemini/GEMINI.md
   Codex CLI          AGENTS.md

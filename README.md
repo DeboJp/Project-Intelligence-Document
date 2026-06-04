@@ -27,8 +27,8 @@ Each project gets its own copy of the rule file and its own `PROJECT_CONTEXT.md`
 
 Copy the contents of `RULE_memory-manager.md` into your agent IDE's instruction file:
 
-- Antigravity: `GEMINI.md` or copy .agents file to directory
-- Claude Code: `CLAUDE.md`
+- Antigravity: `GEMINI.md` or copy .agents/rules/ file to directory
+- Claude Code: `CLAUDE.md` or create similar structure(.claude/rules/CLAUDE.md)
 - Other agent IDEs: Look into individual website on how to setup rules, but likely your system prompt file, workspace instructions, or equivalent
 
 Check `SETUP.txt` for a deeper guide.
